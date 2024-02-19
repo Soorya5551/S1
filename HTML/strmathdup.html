@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>String and Math Functions</title>
+</head>
+<body>
+<div>
+<h2>String Functions</h2>
+Enter the 1st string:
+<input type="text" id="str1"><br>
+Enter the 2nd string:
+<input type="text" id="str2"><br>
+How many time to repeat the String :
+<input type="num" id="repeat"><br>
+<input type="button" value="Generate" onClick="string_func()">
+<ol id="output" type="1"></ol><br><br>
+</div>
+<div>
+<h2>Math Functions</h2>
+Enter the number:
+<input type="text" id="number"><br>
+Enter the power:
+<input type="text" id="power"><br>
+<input type="button" value="Generate" onClick="math_func()">
+<ol id="output_math" type="1"></ol>
+</div>
+<script>
+   function string_func()
+     {
+     let s=document.getElementById('str1').value;
+     let t=document.getElementById('str2').value;
+     let count=document.getElementById('repeat').value;
+     let a='<li>';
+     let b='</li>';
+     let list_items;
+     list_items= a +"String 1 in lowercase:"+s.toLowerCase()+b;
+     list_items += a +"String 2 in Upper case:"+s2.toUpperCase()+b;
+     list_items += a +"Length of string 1:"+s.length+b;
+     list_items += a +"Length of string 2:"+t.length+b;
+     list_items += a +"Character at position 3 of 1st string:"+s.charAt(3)+b;
+     list_items += a +"Repeat string 1 in"+count+"times:"+s.repeat(count)+b;
+     list_items += a +"Concatenate:"+s.concat(' ',t)+b;
+     list_items += a +"Sliced 3 to 6:"+s.slice(3,6)+b;
+     document.getElementById('output').innerHTML=(list_items);
+     }
+   function math_func()
+     {
+       let num=document.getElementById('number').value;
+       let pow=document.getElementById('power').value;
+       let n='<li>';
+       let p='</li>';
+       let list_items;
+       list_items += n +" Value of Pi:"+math.PI+p;
+       list_items += n +"Round of number is:"+math.round(num)+p;
+       list_items += n +"Number raise to power is:"+math.pow(num)+p;
+       list_items += n +"Floor value of"+'num'+math.floor(num)+p;
+       list_items += n +"Square root:"+math.sqrt(num)+p;
+       list_items += n +"Sin value:"+math.sin(num*math.pi/180)+p;
+       list_items += n +"Cos value:"+math.cos(num*math.pi/180)+p;
+       list_items += n +"A random number:"+math.random()+p;
+        document.getElementById('output_math').innerHTML=(list_items);
+      }
+</script>
+ </body>
+ </html>            
